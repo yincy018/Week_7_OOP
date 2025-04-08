@@ -30,3 +30,35 @@ class Car:
       
     def __str__(self):
         return f"Car going {self.__speed}/{self.__top_speed} kmph"
+    
+car1 = Car(250, )
+try:
+    for i in range(1,31):
+        car1.accelerate()
+        print(car1)
+    car1.getSpeed()
+    print(car1)
+except Exception as e:
+    print(e)
+
+    for i in range(1,31):
+        try:
+            car1.getSpeed()
+            car1.decelerate()
+            print(car1)
+        except Exception as e:    
+            print(e)
+
+try:
+    user = float(input("Please enter a number for a car top speed: "))
+    car1.setTopSpeed(user)
+    car1.getTopSpeed()
+    print(car1)
+except Exception as e:
+    print(e)
+
+try:
+    car2 = Car(-99, )
+    print(car2)
+except Exception as e:
+    print(e)
