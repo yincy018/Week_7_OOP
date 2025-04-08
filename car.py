@@ -1,3 +1,7 @@
+class SpeedException(Exception):
+    pass
+
+
 class Car:
     def __init__(self, topSpeed, speed = 0):
         self.setTopSpeed(topSpeed)
@@ -7,7 +11,7 @@ class Car:
         if topSpeed > 0:
             self.__top_speed = topSpeed
         else:
-            raise Exception(f"Invalid top speed: { topSpeed}")
+            raise SpeedException(f"Invalid top speed: { topSpeed}")
     
     def getTopSpeed(self):
         return self.__top_speed
@@ -19,11 +23,11 @@ class Car:
         if self.__speed < self.__top_speed:
             self.__speed += 10
         else: 
-            raise Exception (f"Cannot accelerate above top speed: {self.__top_speed}")
+            raise SpeedException(f"Cannot accelerate above top speed: {self.__top_speed}")
         
     def decelerate(self):
         if self.__speed < 0:
-            raise Exception("Cannot decelerate below zero") 
+            raise SpeedException("Cannot decelerate below zero") 
         else:
             self.__speed -= 10   
             
